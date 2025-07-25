@@ -6,7 +6,7 @@ import KalahariFlavours from "@/components/restaurant/KalahariFlavours"
 import TasteOfKalahari from "@/components/restaurant/TasteOfKalahari"
 import RestaurantHowItWorks from "@/components/restaurant/RestaurantHowItWorks"
 import RestaurantPricingSection from "@/components/restaurant/RestaurantPricingSection"
-import Footer from "@/components/accommodation/Footer"
+import Footer from "@/components/footer"
 
 export default function RestaurantsPage() {
   return (

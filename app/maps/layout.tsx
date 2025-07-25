@@ -1,17 +1,17 @@
 import type React from "react"
 import "@/app/globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
-import { Inter, Playfair_Display } from "next/font/google"
+// import { Inter, Playfair_Display } from "next/font/google"
 
-const playfair = Playfair_Display({
-  subsets: ["latin"],
-  variable: "--font-playfair",
-})
+// const playfair = Playfair_Display({
+//   subsets: ["latin"],
+//   variable: "--font-playfair",
+// })
 
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
-})
+// const inter = Inter({
+//   subsets: ["latin"],
+//   variable: "--font-inter",
+// })
 
 export const metadata = {
   title: "Northern Cape Route Maps",

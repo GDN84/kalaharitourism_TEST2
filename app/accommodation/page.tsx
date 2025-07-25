@@ -5,7 +5,7 @@ import HowItWorks from "@/components/accommodation/HowItWorks"
 import FeaturedProperties from "@/components/accommodation/FeaturedProperties"
 import GuestBenefits from "@/components/accommodation/GuestBenefits"
 import PricingSection from "@/components/accommodation/PricingSection"
-import Footer from "@/components/accommodation/Footer"
+import Footer from "@/components/footer"
 import TravelWidget from "@/components/TravelWidget"
 
 export default function AccommodationPage() {

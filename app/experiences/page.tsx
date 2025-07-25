@@ -3,7 +3,7 @@ import HeroCarousel from "@/components/hero-carousel"
 import { FeaturedExperiences } from "@/components/featured-experiences"
 import { WhyListWithUs } from "@/components/why-list-with-us"
 import { HowItWorks } from "@/components/how-it-works"
-import { Footer } from "@/components/footer"
+import Footer from "@/components/footer"
 
 export default function ExperiencesPage() {
   return (
@@ -15,7 +15,7 @@ export default function ExperiencesPage() {
         <WhyListWithUs />
         <HowItWorks />
       </main>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   )
 }

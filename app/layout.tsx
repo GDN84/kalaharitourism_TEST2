@@ -1,21 +1,21 @@
 import type React from "react"
 import "./globals.css"
 import type { Metadata } from "next"
-import { Inter, Playfair_Display, Crimson_Pro } from "next/font/google"
+// import { Inter, Playfair_Display, Crimson_Pro } from "next/font/google"
 import Script from "next/script"
 import CookieConsent from "@/components/cookie-consent"
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter" })
-const playfair = Playfair_Display({
-  subsets: ["latin"],
-  variable: "--font-playfair",
-  display: "swap",
-})
-const crimson = Crimson_Pro({
-  subsets: ["latin"],
-  variable: "--font-crimson",
-  display: "swap",
-})
+// const inter = Inter({ subsets: ["latin"], variable: "--font-inter" })
+// const playfair = Playfair_Display({
+//   subsets: ["latin"],
+//   variable: "--font-playfair",
+//   display: "swap",
+// })
+// const crimson = Crimson_Pro({
+//   subsets: ["latin"],
+//   variable: "--font-crimson",
+//   display: "swap",
+// })
 
 export const metadata: Metadata = {
   title: "Orange River Kalahari - Experience the Magic of Upington and the Kalahari",
@@ -29,12 +29,12 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${playfair.variable} ${crimson.variable} scroll-smooth`}>
+    <html lang="en">
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       </head>
-      <body className={`${inter.variable} ${playfair.variable} ${crimson.variable}`}>
+      <body style={{ fontFamily: 'system-ui, sans-serif' }}>
         {/* Script to fix ethereum issues - runs before interactive */}
         <Script id="ethereum-fix" strategy="beforeInteractive">
           {`
