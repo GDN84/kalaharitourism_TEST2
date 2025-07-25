@@ -15,7 +15,7 @@ export default function ExperiencesPage() {
         <WhyListWithUs />
         <HowItWorks />
       </main>
-      {/* <Footer /> */}
+      <Footer />
     </div>
   )
 }
