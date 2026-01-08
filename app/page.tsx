@@ -9,10 +9,12 @@ export default function Home() {
       {/* Header */}
       <header className="bg-white py-4 px-6 border-b">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
-          <Link href="/" className="brand-header">
+          <Link href="/" className="brand-header text-sm md:text-base">
             ORANGE RIVER KALAHARI
           </Link>
-          <nav className="hidden md:flex space-x-8">
+          
+          {/* Removed 'hidden' so menu stays visible on mobile */}
+          <nav className="flex space-x-3 md:space-x-8">
             {[
               { name: "Restaurants", href: "/restaurants", external: false },
               { name: "Shop", href: "https://orangeriverwines.com/age-verification/", external: true },
@@ -27,13 +29,13 @@ export default function Home() {
                   href={item.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-600 uppercase text-xs tracking-wider hover:text-gray-900 flex items-center gap-1"
+                  className="text-gray-600 uppercase text-[10px] md:text-xs tracking-wider hover:text-gray-900 flex items-center gap-1 shrink-0"
                 >
                   {item.name}
                   <svg 
                     xmlns="http://www.w3.org/2000/svg" 
-                    width="12" 
-                    height="12" 
+                    width="10" 
+                    height="10" 
                     viewBox="0 0 24 24" 
                     fill="none" 
                     stroke="currentColor" 
@@ -51,7 +53,7 @@ export default function Home() {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="text-gray-600 uppercase text-xs tracking-wider hover:text-gray-900"
+                  className="text-gray-600 uppercase text-[10px] md:text-xs tracking-wider hover:text-gray-900 shrink-0"
                 >
                   {item.name}
                 </Link>
