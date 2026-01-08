@@ -1,14 +1,20 @@
 import type React from "react"
 import "./globals.css"
 import type { Metadata } from "next"
+import { Inter, Playfair_Display } from "next/font/google" // Added Playfair back
 import Script from "next/script"
 import CookieConsent from "@/components/cookie-consent"
-import Link from "next/link" // Added for the navigation
+import Link from "next/link"
+
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter" })
+const playfair = Playfair_Display({ 
+  subsets: ["latin"], 
+  variable: "--font-playfair" 
+})
 
 export const metadata: Metadata = {
   title: "Orange River Kalahari - Experience the Magic of Upington and the Kalahari",
   description: "Discover the Orange River Culture & the Kalahari Wilderness",
-  generator: "v0.dev",
 }
 
 export default function RootLayout({
@@ -17,35 +23,21 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${inter.variable} ${playfair.variable}`}>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       </head>
-      <body style={{ fontFamily: 'system-ui, sans-serif' }}>
-        {/* Script to fix ethereum issues */}
+      <body className="font-sans antialiased">
         <Script id="ethereum-fix" strategy="beforeInteractive">
-          {`
-            try {
-              if (typeof window !== 'undefined') {
-                const originalConsoleError = console.error;
-                console.error = function() {
-                  if (arguments[0] && typeof arguments[0] === 'string' && 
-                      arguments[0].includes('ethereum')) {
-                    console.warn('Ethereum error suppressed');
-                    return;
-                  }
-                  return originalConsoleError.apply(this, arguments);
-                };
-              }
-            } catch (e) {}
-          `}
+          {`try { if (typeof window !== 'undefined') { const err = console.error; console.error = function() { if (arguments[0] && typeof arguments[0] === 'string' && arguments[0].includes('ethereum')) return; err.apply(this, arguments); }; } } catch (e) {}`}
         </Script>
 
-        {/* GLOBAL HEADER - Added here to show on every page */}
+        {/* HEADER START */}
         <header className="bg-white py-4 px-6 border-b sticky top-0 z-50">
           <div className="max-w-7xl mx-auto flex justify-between items-center">
-            <Link href="/" className="brand-header text-sm md:text-base">
+            {/* The Logo/Brand Name using Playfair Font */}
+            <Link href="/" className="text-sm md:text-base font-bold tracking-tighter" style={{ fontFamily: 'var(--font-playfair), serif' }}>
               ORANGE RIVER KALAHARI
             </Link>
             
@@ -86,8 +78,9 @@ export default function RootLayout({
             </nav>
           </div>
         </header>
+        {/* HEADER END */}
 
-        {children}
+        <main>{children}</main>
         <CookieConsent />
       </body>
     </html>
