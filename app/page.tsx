@@ -6,7 +6,7 @@ import Footer from "@/components/footer"
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
-      {/* Updated Header with Shop Link */}
+      {/* Updated Header with Working Shop Link */}
       <header className="bg-white py-4 px-6 border-b">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           <Link href="/" className="brand-header text-sm md:text-base">
@@ -16,7 +16,7 @@ export default function Home() {
           <nav className="flex items-center space-x-3 md:space-x-8">
             {[
               { name: "Restaurants", href: "/restaurants", external: false },
-              { name: "Shop", href: "https://orangeriverwines.com/age-verification/", external: true },
+              { name: "Shop", href: "https://orangeriverwines.com/shop/", external: true },
               { name: "Accommodation", href: "/accommodation", external: false },
               { name: "Experiences", href: "/experiences", external: false },
               { name: "Tasting Room", href: "/tasting-room", external: false },
