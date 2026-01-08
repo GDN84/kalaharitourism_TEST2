@@ -6,59 +6,25 @@ import Footer from "@/components/footer"
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
-      {/* Header */}
+      {/* Header with Red Text Test */}
       <header className="bg-white py-4 px-6 border-b">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           <Link href="/" className="brand-header text-sm md:text-base">
             ORANGE RIVER KALAHARI
           </Link>
           
-          {/* Removed 'hidden' so menu stays visible on mobile */}
-          <nav className="flex space-x-3 md:space-x-8">
-            {[
-              { name: "Restaurants", href: "/restaurants", external: false },
-              { name: "Shop", href: "https://orangeriverwines.com/age-verification/", external: true },
-              { name: "Accommodation", href: "/accommodation", external: false },
-              { name: "Experiences", href: "/experiences", external: false },
-              { name: "Tasting Room", href: "/tasting-room", external: false },
-              { name: "Contact", href: "/contact", external: false },
-            ].map((item) => (
-              item.external ? (
-                <a
-                  key={item.name}
-                  href={item.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-600 uppercase text-[10px] md:text-xs tracking-wider hover:text-gray-900 flex items-center gap-1 shrink-0"
-                >
-                  {item.name}
-                  <svg 
-                    xmlns="http://www.w3.org/2000/svg" 
-                    width="10" 
-                    height="10" 
-                    viewBox="0 0 24 24" 
-                    fill="none" 
-                    stroke="currentColor" 
-                    strokeWidth="2" 
-                    strokeLinecap="round" 
-                    strokeLinejoin="round" 
-                    className="opacity-70"
-                  >
-                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                    <polyline points="15 3 21 3 21 9"></polyline>
-                    <line x1="10" y1="14" x2="21" y2="3"></line>
-                  </svg>
-                </a>
-              ) : (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  className="text-gray-600 uppercase text-[10px] md:text-xs tracking-wider hover:text-gray-900 shrink-0"
-                >
-                  {item.name}
-                </Link>
-              )
-            ))}
+          {/* THE RED TEXT TEST BLOCK */}
+          <nav className="flex items-center space-x-4">
+             <span className="text-red-600 font-bold text-lg animate-pulse">
+               !!! TESTING SHOP LINK !!!
+             </span>
+             <a 
+               href="https://orangeriverwines.com/age-verification/" 
+               target="_blank" 
+               className="bg-red-600 text-white px-3 py-1 rounded text-xs font-bold"
+             >
+               SHOP NOW
+             </a>
           </nav>
         </div>
       </header>
