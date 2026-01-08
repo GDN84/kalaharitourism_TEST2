@@ -1,21 +1,9 @@
 import type React from "react"
 import "./globals.css"
 import type { Metadata } from "next"
-// import { Inter, Playfair_Display, Crimson_Pro } from "next/font/google"
 import Script from "next/script"
 import CookieConsent from "@/components/cookie-consent"
-
-// const inter = Inter({ subsets: ["latin"], variable: "--font-inter" })
-// const playfair = Playfair_Display({
-//   subsets: ["latin"],
-//   variable: "--font-playfair",
-//   display: "swap",
-// })
-// const crimson = Crimson_Pro({
-//   subsets: ["latin"],
-//   variable: "--font-crimson",
-//   display: "swap",
-// })
+import Link from "next/link" // Added for the navigation
 
 export const metadata: Metadata = {
   title: "Orange River Kalahari - Experience the Magic of Upington and the Kalahari",
@@ -35,13 +23,11 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       </head>
       <body style={{ fontFamily: 'system-ui, sans-serif' }}>
-        {/* Script to fix ethereum issues - runs before interactive */}
+        {/* Script to fix ethereum issues */}
         <Script id="ethereum-fix" strategy="beforeInteractive">
           {`
             try {
-              // Prevent ethereum property conflicts
               if (typeof window !== 'undefined') {
-                // Create a safe version of console.error that ignores ethereum errors
                 const originalConsoleError = console.error;
                 console.error = function() {
                   if (arguments[0] && typeof arguments[0] === 'string' && 
@@ -52,16 +38,58 @@ export default function RootLayout({
                   return originalConsoleError.apply(this, arguments);
                 };
               }
-            } catch (e) {
-              // Silently fail if there's an error in our error handler
-            }
+            } catch (e) {}
           `}
         </Script>
+
+        {/* GLOBAL HEADER - Added here to show on every page */}
+        <header className="bg-white py-4 px-6 border-b sticky top-0 z-50">
+          <div className="max-w-7xl mx-auto flex justify-between items-center">
+            <Link href="/" className="brand-header text-sm md:text-base">
+              ORANGE RIVER KALAHARI
+            </Link>
+            
+            <nav className="flex items-center space-x-3 md:space-x-8">
+              {[
+                { name: "Restaurants", href: "/restaurants", external: false },
+                { name: "Shop", href: "https://orangeriverwines.com/shop/", external: true },
+                { name: "Accommodation", href: "/accommodation", external: false },
+                { name: "Experiences", href: "/experiences", external: false },
+                { name: "Tasting Room", href: "/tasting-room", external: false },
+                { name: "Contact", href: "/contact", external: false },
+              ].map((item) => (
+                item.external ? (
+                  <a
+                    key={item.name}
+                    href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-600 uppercase text-[10px] md:text-xs tracking-wider hover:text-gray-900 flex items-center gap-1"
+                  >
+                    {item.name}
+                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="opacity-70">
+                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                      <polyline points="15 3 21 3 21 9"></polyline>
+                      <line x1="10" y1="14" x2="21" y2="3"></line>
+                    </svg>
+                  </a>
+                ) : (
+                  <Link
+                    key={item.name}
+                    href={item.href}
+                    className="text-gray-600 uppercase text-[10px] md:text-xs tracking-wider hover:text-gray-900"
+                  >
+                    {item.name}
+                  </Link>
+                )
+              ))}
+            </nav>
+          </div>
+        </header>
+
         {children}
         <CookieConsent />
       </body>
     </html>
   )
 }
-
-import "./globals.css"
