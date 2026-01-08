@@ -15,6 +15,7 @@ export default function Home() {
           <nav className="hidden md:flex space-x-8">
             {[
               { name: "Restaurants", href: "/restaurants" },
+              { name: "Shop", href: "/shop" }, // This line adds the Shop button
               { name: "Accommodation", href: "/accommodation" },
               { name: "Experiences", href: "/experiences" },
               { name: "Tasting Room", href: "/tasting-room" },
