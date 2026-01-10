@@ -124,10 +124,16 @@ export default function TastingRoom() {
       {/* Restaurant Section */}
       <section className="py-16 flex justify-center bg-gray-50">
         <div className="w-full max-w-5xl flex flex-col md:flex-row">
-          <div className="md:w-1/2 p-4 flex flex-col justify-center">
-            <h2 className="text-3xl font-serif text-[#8B2635] mb-4">DIE KERKMUIS RESTAURANT</h2>
+          {/* Added items-start to keep the button from stretching */}
+          <div className="md:w-1/2 p-4 flex flex-col justify-center items-start text-left">
+            <h2 className="text-3xl font-serif text-[#8B2635] mb-4 uppercase">Die Kerkmuis Restaurant</h2>
             <p className="text-gray-700 mb-6">Our friendly staff is ready to serve you the best local dishes.</p>
-            <a href="https://orangeriverwines.com/wp-content/uploads/2025-Menu_A4_compressed.pdf" target="_blank" rel="noopener noreferrer" className="bg-[#8B2635] text-white px-6 py-2 text-sm uppercase tracking-wider hover:bg-[#6d1e29] inline-block">
+            <a 
+              href="https://orangeriverwines.com/wp-content/uploads/2025-Menu_A4_compressed.pdf" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="bg-[#8B2635] text-white px-6 py-2 text-sm uppercase tracking-wider hover:bg-[#6d1e29] inline-block w-fit"
+            >
               View Menu
             </a>
           </div>
