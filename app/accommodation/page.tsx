@@ -11,6 +11,10 @@ import TravelWidget from "@/components/TravelWidget"
 export default function AccommodationPage() {
   return (
     <div className="min-h-screen">
+      <ClientOnly>
+        <Header />
+      </ClientOnly>
+      
       {/* Top Announcement Bar */}
       <div style={{
         background: '#EA580C',
@@ -29,9 +33,6 @@ export default function AccommodationPage() {
         🚀 FOUNDING PARTNER SPECIAL: Get 90 Days of Premium Exposure for FREE. Offer valid for local businesses!
       </div>
 
-      <ClientOnly>
-        <Header />
-      </ClientOnly>
       <Hero />
       <HowItWorks />
       <FeaturedProperties />
